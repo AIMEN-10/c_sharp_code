@@ -1,0 +1,46 @@
+# printing number of repeated integers in an array
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace task2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int[] arr=new int[10];
+            int Count = 0;
+            
+            Console.WriteLine("Input the number of elements to be stored in the array: ");
+            int num=int.Parse(Console.ReadLine());
+            Console.WriteLine("Input elements in the array: ");
+            for (int i = 0; i < num; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+           
+
+                for (int i=0;i<num;i++)
+            {
+                for(int j=i;j<num-1;j++)
+                {
+                    if (arr[i]==arr[j+1])
+                    {
+                        Count=Count + 1;                       
+                    }
+                   
+                }
+               
+            }
+            Console.WriteLine("Expected output: \nTotal number of duplicated elements found in array is:" + Count);
+
+        }
+    }
+}
+
